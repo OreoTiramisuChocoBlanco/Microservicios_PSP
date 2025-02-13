@@ -1,5 +1,19 @@
 {
     "codigo" : 14037,
     "gentilicio" : "Iznajeño/a",
-    "sitioweb" : "https://iznajar.es"
+    "sitioweb" : "https://iznajar.es",
+    "NOMBRE_PROVINCIA": "Córdoba",
+    "NOMBRE": "Iznájar",
+    "SUPERFICIE": 13635.8206,
+    "PERIMETRO": 59937,
+    "CODIGOINE_CAPITAL": "14037001201",
+    "NOMBRE_CAPITAL": "Iznájar",
+    "POBLACION_CAPITAL": "2122",
+    "HOJA_MTN25": "1007-2",
+    "LONGITUD_ETRS89_REGCAN95": -4.30793236,
+    "LATITUD_ETRS89_REGCAN95": 37.25784671,
+    "ORIGEN_COORD": "Mapa",
+    "ALTITUD": 530,
+    "ORIGEN_ALTITUD": "MDT5",
+    "DISCREPANTE_INE": 0
 }
