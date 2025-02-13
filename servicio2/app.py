@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, abort
 import json
 
 app2 = Flask(__name__)
@@ -10,7 +10,8 @@ def get_demo(municipioid):
         if(diccionario["codigo"]==municipioid):
             return jsonify(diccionario)
         else:
-            return "{\"info\": \"Municipio no disponible\"}"
+            abort(404)
+            #return "{\"info\": \"Municipio no disponible\"}"
 
 
 if __name__ == '__main__':
