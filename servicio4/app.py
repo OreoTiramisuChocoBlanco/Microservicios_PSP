@@ -23,8 +23,6 @@ def get_json(municipioid, parametro1="", parametro2="", parametro3=""):
                 print("meteo")
                 diccionario.update(requests.get(f"http://localhost:5002/{municipioid}/meteo/").json())
 
-
-
             return jsonify(diccionario) 
         else:
             abort(404)

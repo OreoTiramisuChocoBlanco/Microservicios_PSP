@@ -11,8 +11,8 @@ def get_geo(municipioid):
         if (diccionario["codigo"] == municipioid):
             return jsonify(diccionario) 
         else:
-            #abort(404)
-            return "{\"info\": \"Municipio no disponible\"}"
+            abort(404)
+            #return "{\"info\": \"Municipio no disponible\"}"
 
 if __name__ == '__main__':
     app1.run(port=5000)
