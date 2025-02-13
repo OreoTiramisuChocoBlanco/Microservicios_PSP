@@ -8,8 +8,6 @@ app3 = Flask(__name__)
 def get_meteo(municipioid):
     resp = requests.get("https://www.el-tiempo.net/api/json/v2/provincias/14/municipios/14037")
     diccionario = resp.json()
-    #diccionario = json.load(data)
-    print(diccionario["municipio"]["CODIGOINE"][0:5])
     if(diccionario["municipio"]["CODIGOINE"][0:5]==str(municipioid)):
             return jsonify(diccionario)
     else:
