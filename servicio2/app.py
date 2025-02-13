@@ -3,7 +3,7 @@ import json
 
 app2 = Flask(__name__)
 
-@app2.route('/<int:municipioid>/demo', methods=['GET'])
+@app2.route('/<int:municipioid>/demo/', methods=['GET'])
 def get_demo(municipioid):
     with open("municipio.json") as municipio_json:
         diccionario = json.load(municipio_json)

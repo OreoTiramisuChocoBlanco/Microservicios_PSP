@@ -1,13 +1,13 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import requests
 import json
 
 app3 = Flask(__name__)
 
-@app3.route('/<int:municipioid>/meteo', methods=['GET'])
+@app3.route('/<int:municipioid>/meteo/', methods=['GET'])
 def get_meteo(municipioid):
-    resp = requests.get("https://www.el-tiempo.net/api/json/v2/provincias/14/municipios/14037")
-    diccionario = resp.json()
+    resp = f"https://www.el-tiempo.net/api/json/v2/provincias/14/municipios/{municipioid}"
+    diccionario = requests.get(resp).json()
     if(diccionario["municipio"]["CODIGOINE"][0:5]==str(municipioid)):
             return jsonify(diccionario)
     else:
