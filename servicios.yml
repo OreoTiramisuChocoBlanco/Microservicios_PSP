@@ -1,37 +1,39 @@
-# docker-compose -f mariadb_phpmyadmin2.yml -p mariadb-phpmyadmin up
+# docker-compose -f servicios.yml -p servicios up
 version: "3.8"
 
 services:
-  mariadb:
-    image: mariadb
-    command:
-      - --character-set-server=utf8mb4
-      - --collation-server=utf8mb4_spanish_ci
-      - --sql_mode=TRADITIONAL,ONLY_FULL_GROUP_BY
-#     - --bind-address=0.0.0.0
-    container_name: mariadb2
+  servicio1:
+    image: servicio1
+    container_name: servicio1
     ports:
-      - 3306:3306
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-#    volumes:
-#      - ./mariadb_data:/var/lib/mysql
+      - 5000:5000
     networks:
-      - mariadb
+      - servicios
 
-  phpmyadmin:
-    image: phpmyadmin
-    container_name: phpmyadmin2
+  servicio2:
+    image: servicio2
+    container_name: servicio2
     ports:
-      - 80:80
-    environment:
-      - PMA_HOST=mariadb
-      - PMA_PORT=3306
+      - 5001:5000
     networks:
-      - mariadb
-    depends_on:
-      - mariadb
+      - servicios
+  
+  servicio3:
+    image: servicio3
+    container_name: servicio3
+    ports:
+      - 5002:5000
+    networks:
+      - servicios
+  
+  servicio4:
+    image: servicio4
+    container_name: servicio4
+    ports:
+      - 5003:5000
+    networks:
+      - servicios
 
 networks:
-  mariadb:
+  servicios:
     driver: bridge
