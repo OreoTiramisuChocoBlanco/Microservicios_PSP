@@ -1,5 +1,4 @@
 # docker-compose -f servicios.yml -p servicios up
-version: "3.8"
 
 services:
   servicio1:
