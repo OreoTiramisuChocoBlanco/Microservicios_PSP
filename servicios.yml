@@ -23,7 +23,7 @@ services:
     image: servicio4
     container_name: servicio4
     ports:
-      - 5003:5000
+      - 5000:5003
     networks:
       - servicios
 

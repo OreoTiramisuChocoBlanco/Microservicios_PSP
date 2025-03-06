@@ -13,15 +13,15 @@ def get_json(municipioid, parametro1="", parametro2="", parametro3=""):
         if (diccionario["codigo"] == municipioid):
             path = request.path
             if "geo" in path:
-                diccionario.update(requests.get(f"http://localhost:5000/{municipioid}/geo/").json())
+                diccionario.update(requests.get(f"http://servicio1:5000/{municipioid}/geo/").json())
 
             if "demo" in path:
                 print("demo")
-                diccionario.update(requests.get(f"http://localhost:5001/{municipioid}/demo/").json())
+                diccionario.update(requests.get(f"http://servicio2:5001/{municipioid}/demo/").json())
 
             if "meteo" in path:
                 print("meteo")
-                diccionario.update(requests.get(f"http://localhost:5002/{municipioid}/meteo/").json())
+                diccionario.update(requests.get(f"http://servicio3:5002/{municipioid}/meteo/").json())
 
             return jsonify(diccionario) 
         else:
